@@ -1,0 +1,114 @@
+﻿@model IEnumerable<OnlineShoppingDemo2.Models.Product>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-2 headingtag">
+                <h1>Welcome to our<br>Online Shopping </h1>
+                <p>YOU CAN'T BUY HAPPINESS BUT YOU CAN BUY BAGS AND THAT'S KIND OF THE SAME THING </p>
+              
+            </div>
+            <div class="col-2 topImage">
+                <img src="https://cdn.pixabay.com/photo/2017/03/13/17/26/ecommerce-2140603_1280.jpg" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="small-container">
+
+    <h2 class="title">LAPTOP BAGS</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            if (item.Categories.CateName == "LAPTOP BAGS")
+            {
+
+                <div class="col-4">
+
+                    <img src="../Images/@item.ImageUrl" alt="" width="200px" height="250px">
+                    <h4>@item.Name</h4>
+                    <p>@item.Price</p>
+
+                    <a class="buttonDetails">@Html.ActionLink("Details", "ShowDetails", "ProductUser", new { id = item.Id, area = "" }, new { @class = "navbar-brand" })</a>
+                </div>
+            }
+        }
+    </div>
+
+
+    <h2 class="title">HAND BAGS</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            if (item.Categories.CateName == "HAND BAGS")
+            {
+
+                <div class="col-4">
+
+                    <img src="../Images/@item.ImageUrl" alt="" width="200px" height="250px">
+                    <h4>@item.Name</h4>
+                    <p>@item.Price</p>
+
+                    @Html.ActionLink("Details", "ShowDetails", "ProductUser", new { id = item.Id, area = "" }, new { @class = "navbar-brand" })
+                </div>
+            }
+        }
+    </div>
+
+    <h2 class="title">KIDS BAG</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            if (item.Categories.CateName == "KIDS BAG")
+            {
+
+                <div class="col-4">
+
+                    <img src="../Images/@item.ImageUrl" alt="" width="200px" height="250px">
+                    <h4>@item.Name</h4>
+                    <p>@item.Price</p>
+
+                    @Html.ActionLink("Details", "ShowDetails", "ProductUser", new { id = item.Id, area = "" }, new { @class = "navbar-brand" })
+                </div>
+            }
+        }
+    </div>
+    <h2 class="title">TRAVEL BAGS</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            if (item.Categories.CateName == "TRAVEL BAGS")
+            {
+
+                <div class="col-4">
+
+                    <img src="../Images/@item.ImageUrl" alt="" width="200px" height="250px">
+                    <h4>@item.Name</h4>
+                    <p>@item.Price</p>
+
+                    @Html.ActionLink("Details", "ShowDetails", "ProductUser", new { id = item.Id, area = "" }, new { @class = "navbar-brand" })
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
+
+
+
+
